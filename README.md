@@ -27,11 +27,11 @@ The repository includes the following files:
 
 ## Results
 
-The figure below represents the simulator. The car represents the true position of the tracked object. Lidar measurements are represented by red circles, radar measurements by blue circles with an arrow pointing in the direction of the observed angle, and EKF position estimation bygreen triangles. We can see that EKF makes a good job in filtering radar and lidar measurements.
+The figure below represents the simulator. The car represents the true position of the tracked object. Lidar measurements are represented by red circles, radar measurements by blue circles with an arrow pointing in the direction of the observed angle, and EKF position estimation by green triangles. We can see that EKF makes a good job in filtering radar and lidar measurements.
 
 ![simulator](./simulator.png)
 
-On the right and side of the simulator, values of RMSE (root mean square error) for px, py, vx, vy are displayed. Here they are the results of processing both radar and lidar measurements. 
+On the right and side of the simulator, values of RMSE (root mean square error) for position (x,y) and velocity (vx,vy) are displayed. Here they are the results of processing both radar and lidar measurements. 
 I also compared the performance of the EKF with radar only and  lidar only measurements. Final RMSE are given in the table below:
 
 |Type / RMSE|Px|Py |Vx |Vy|
