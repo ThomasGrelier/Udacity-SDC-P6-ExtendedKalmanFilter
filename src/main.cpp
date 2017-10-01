@@ -105,10 +105,10 @@ int main()
     	  gt_values(3) = vy_gt;
     	  ground_truth.push_back(gt_values);
 
-          //Call ProcessMeasurement(meas_package) for Kalman filter
+          //Call ProcessMeasurment(meas_package) for Kalman filter
     	  fusionEKF.ProcessMeasurement(meas_package);
 
-    	  //Push the current estimated x,y position from the Kalman filter's state vector
+    	  //Push the current estimated x,y positon from the Kalman filter's state vector
 
     	  VectorXd estimate(4);
 
@@ -122,6 +122,7 @@ int main()
     	  estimate(2) = v1;
     	  estimate(3) = v2;
 
+          //cout<< "taille = " << estimations.size() << endl;
     	  estimations.push_back(estimate);
 
     	  VectorXd RMSE = tools.CalculateRMSE(estimations, ground_truth);
