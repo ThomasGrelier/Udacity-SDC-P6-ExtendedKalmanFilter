@@ -3,7 +3,7 @@
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 ## Overview
-This repository contains the work I did within **Project #6 of Udacity's Self-Driving Car Nanodegree Program** (first project of second term). Objective of the project is to utilize a kalman filter to estimate the state (position / velocity) of a moving object of interest (for instance, bicycle in the vicinity of a car) with noisy lidar and radar measurements. 
+This repository contains the work I did within **Project #6 of Udacity's Self-Driving Car Nanodegree Program** (first project of second term). Objective of the project is to utilize an extended kalman filter (EKF) to estimate the state (position / velocity) of a moving object of interest (for instance, bicycle in the vicinity of a car) with noisy lidar and radar measurements. 
 
 For this Udacity provides us with a car driving simulator it has developed. It can be downloaded [here](https://github.com/udacity/self-driving-car-sim/releases).
 
@@ -19,7 +19,7 @@ The repository includes the following files:
  	 - tools.h & .cpp: function to calculate RMSE,  radar measurement function and its Jacobian
  	 - measurement_package.h: defines a class to be used to store measurements
  	 - json.hpp: JSON is used for communication with simulator
- - /data: a folder containing a data file for testing the extended Kalman filter which the simulator interface provides. It contains radar / lidar measurements and true vehicle state (position and velocity).
+ - /data: a folder containing a data file for testing the extended Kalman filter which the simulator interface provides. It contains radar / lidar measurements and true vehicle state (2D-position and 2D-velocity). There are 500 measurements (lidar and radar measurements alternatively). Timestep is 50 ms.
  - CMakeLists.txt: file that is used for compiling code
 
 
@@ -27,7 +27,6 @@ The repository includes the following files:
 
 ## Results
 
-Data files contains 500 measurements (lidar and radar measurements alternatively). Measurements are timetagged (every 50 ms).
 The figure below represents the simulator. The car represents the true position of the tracked object. Lidar measurements are represented by red circles, radar measurements by blue circles with an arrow pointing in the direction of the observed angle, and EKF position estimation bygreen triangles. We can see that EKF makes a good job in filtering radar and lidar measurements.
 
 ![simulator](./simulator.png)
